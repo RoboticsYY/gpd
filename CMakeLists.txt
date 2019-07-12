@@ -140,7 +140,7 @@ DEPENDS Eigen OpenCV PCL
 )
 
 ###########
-## Build ##
+## Build ##scripts/gripper_server.pyscripts/gripper_server.py
 ###########
 
 ## Specify additional locations of header files
@@ -175,6 +175,8 @@ add_executable(${PROJECT_NAME}_classify_candidates src/nodes/classify_candidates
 if(USE_CAFFE STREQUAL "ON")
   add_executable(${PROJECT_NAME}_test_occlusion src/tests/test_occlusion.cpp)
 endif()
+
+add_dependencies(${PROJECT_NAME}_detect_grasps gpd_generate_messages_cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
