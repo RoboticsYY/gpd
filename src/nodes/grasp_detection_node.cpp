@@ -258,7 +258,7 @@ void GraspDetectionNode::cloud_callback(const sensor_msgs::PointCloud2& msg)
         // Mandatory
         seg.setModelType (pcl::SACMODEL_PLANE);
         seg.setMethodType (pcl::SAC_RANSAC);
-        seg.setDistanceThreshold (0.015);
+        seg.setDistanceThreshold (0.005);
         seg.setInputCloud (cloud);
         seg.segment (*inliers, *coefficients);
 
